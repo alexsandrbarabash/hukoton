@@ -3,9 +3,9 @@ import React from "react";
 import {Switch, Route} from "react-router-dom";
 import SelectionMenu from '../../pages/selectionMenu';
   
-import ScheduleCreator from "../../page/schedule-creator";
-import ScheduleStudent from "../../page/schedule-student";
-import ScheduleEducator from "../../page/schedule-educator";
+import ScheduleCreator from "../../pages/schedule-creator";
+import ScheduleStudent from "../../pages/schedule-student";
+import ScheduleEducator from "../../pages/schedule-educator";
 
 const RoutingContainer = () => {
     return (

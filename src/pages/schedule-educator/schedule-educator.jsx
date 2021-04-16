@@ -1,30 +1,30 @@
 import React from "react";
-import DayStudent from "../../component/day-student";
+import DayEducator from "../../components/day-educator";
 
-const ScheduleStudent = () => {
+const ScheduleEducator = () => {
   return (
     <div className="schedule-wrapper">
       <div className="container-fluid">
         <div className="row">
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
         </div>
         <div className="row">
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayEducator />
           </div>
         </div>
       </div>
@@ -32,4 +32,4 @@ const ScheduleStudent = () => {
   );
 };
 
-export default ScheduleStudent;
+export default ScheduleEducator;
