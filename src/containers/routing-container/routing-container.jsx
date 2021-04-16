@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Switch, Route } from "react-router-dom";
-import SelectionMenu from "../../pages/selectionMenu";
+import SelectionMenu from "../../pages/selection-menu";
 
 import ScheduleCreator from "../../pages/schedule-creator";
 import ScheduleStudent from "../../pages/schedule-student";

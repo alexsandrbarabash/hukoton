@@ -8,7 +8,7 @@ import {
     Container,
 } from 'react-bootstrap';
 
-import './selectionMenu.scss'
+import './selection-menu.scss'
 
 const SelectionMenu = () => {
     return (
