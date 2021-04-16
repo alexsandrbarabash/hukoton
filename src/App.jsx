@@ -1,10 +1,9 @@
-import React from "react";
-import RoutingContainer from "./containers/routing-container";
+import React, { Component } from "react";
+import RoutingContainer from "./component/routing-container/routing-containers";
 
 const App = () => {
-    return <div>
-        <RoutingContainer/>
-    </div>;
+  return <RoutingContainer/>;
+
 };
 
 export default App;
