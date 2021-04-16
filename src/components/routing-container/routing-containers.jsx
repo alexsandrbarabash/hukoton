@@ -1,7 +1,7 @@
 import React from "react";
 import {Switch,Route} from "react-router-dom";
-import MainScreen from '../../page/main-screen';
-import RegisterScreen from '../../page/register-screen';
+import MainScreen from '../../pages/main-screen';
+import RegisterScreen from '../../pages/register-screen';
 
 const RoutingContainer = () => {
     return (
