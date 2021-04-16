@@ -1,22 +1,15 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-const TableElement = ({
-  subject = "sfd",
-  task = "sdfsd",
-  group = "A1",
-  showModal,
-  index,
-}) => (
+const TableElement = ({ subject = "", educator = "", showModal, index }) => (
   <tr onClick={showModal}>
     <td width={30}>{index}</td>
-    <td>{group}</td>
     <td>{subject}</td>
-    <td>{task}</td>
+    <td>{educator}</td>
   </tr>
 );
 
-const DayEducator = ({ name = "Monday", showModal }) => {
+const DayCreator = ({ name = "Monday", showModal }) => {
   return (
     <div className="tab-container">
       <h3>{name}</h3>
@@ -24,9 +17,8 @@ const DayEducator = ({ name = "Monday", showModal }) => {
         <thead>
           <tr>
             <th width={30}>#</th>
-            <th>Group</th>
             <th>Subject</th>
-            <th width={0}>Task</th>
+            <th>Educator</th>
           </tr>
         </thead>
       </Table>
@@ -48,4 +40,4 @@ const DayEducator = ({ name = "Monday", showModal }) => {
   );
 };
 
-export default DayEducator;
+export default DayCreator;

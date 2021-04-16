@@ -1,30 +1,31 @@
 import React from "react";
-import DayStudent from "../../component/day-student";
+import "./schedule-creator.scss";
+import DayCreator from "../../component/day-creator";
 
-const ScheduleStudent = () => {
+const ScheduleCreator = () => {
   return (
     <div className="schedule-wrapper">
       <div className="container-fluid">
         <div className="row">
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
         </div>
         <div className="row">
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
           <div className="col-4">
-            <DayStudent />
+            <DayCreator />
           </div>
         </div>
       </div>
@@ -32,4 +33,4 @@ const ScheduleStudent = () => {
   );
 };
 
-export default ScheduleStudent;
+export default ScheduleCreator;

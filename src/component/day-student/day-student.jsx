@@ -1,8 +1,6 @@
 import React from "react";
 import { Table } from "react-bootstrap";
 
-import "./day-student-style.scss";
-
 const TableElement = ({
   index,
   subject = "",
@@ -12,7 +10,7 @@ const TableElement = ({
   showModal,
 }) => (
   <tr onClick={showModal}>
-    <td>{index}</td>
+    <td width={30}>{index}</td>
     <td>{time}</td>
     <td>{subject}</td>
     <td>{task}</td>
@@ -22,9 +20,9 @@ const TableElement = ({
 
 const DayStudent = ({ name = "Monday", showModal }) => {
   return (
-    <div className="table-day">
+    <div className="tab-container">
       <h3>{name}</h3>
-      <Table striped hover size="sm">
+      <Table>
         <thead>
           <tr>
             <th width={30}>#</th>
@@ -34,17 +32,21 @@ const DayStudent = ({ name = "Monday", showModal }) => {
             <th width={100}>Grades</th>
           </tr>
         </thead>
-        <tbody>
-          <TableElement index={1} subject="react" showModal={showModal} />
-          <TableElement index={2} subject="" />
-          <TableElement index={3} subject="" />
-          <TableElement index={4} subject="react" showModal={showModal} />
-          <TableElement index={5} subject="react" showModal={showModal} />
-          <TableElement index={6} subject="react" showModal={showModal} />
-          <TableElement index={7} subject="react" showModal={showModal} />
-          <TableElement index={8} subject="react" showModal={showModal} />
-        </tbody>
       </Table>
+      <div className="table-day">
+        <Table striped hover size="sm">
+          <tbody>
+            <TableElement index={1} subject="react" showModal={showModal} />
+            <TableElement index={2} subject="" />
+            <TableElement index={3} subject="" />
+            <TableElement index={4} subject="react" showModal={showModal} />
+            <TableElement index={5} subject="react" showModal={showModal} />
+            <TableElement index={6} subject="react" showModal={showModal} />
+            <TableElement index={7} subject="react" showModal={showModal} />
+            <TableElement index={8} subject="react" showModal={showModal} />
+          </tbody>
+        </Table>
+      </div>
     </div>
   );
 };
