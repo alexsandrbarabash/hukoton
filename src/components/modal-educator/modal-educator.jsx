@@ -22,19 +22,6 @@ const ModalEducator = () => {
               <div className="left-col">
                 <div className="student-grade">
                   <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
-                  <ItemStudent />
                 </div>
               </div>
             </div>
