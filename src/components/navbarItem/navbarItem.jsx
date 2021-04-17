@@ -5,6 +5,7 @@ import logo from '../../assets/icons/logo.svg';
 import ProfilePreview from '../profilePreview';
 
 const NavbarItem = ({children}) => {
+
     return (
         <Navbar className='shadow-sm'>
             <Container fluid>
@@ -16,7 +17,7 @@ const NavbarItem = ({children}) => {
                 <Navbar.Collapse className='justify-content-center'>
                     {children}
                 </Navbar.Collapse>
-                <ProfilePreview name='Alexey Harahan'/>
+                <ProfilePreview/>
             </Container>
         </Navbar>
     );

@@ -9,8 +9,8 @@ const TableElement = ({
   index,
 }) => (
   <tr onClick={showModal}>
-    <td width={30}>{index}</td>
-    <td>{group}</td>
+    <td width={40}>{index}</td>
+    <td width={90}>{group}</td>
     <td>{subject}</td>
     <td>{task}</td>
   </tr>
@@ -23,8 +23,8 @@ const DayEducator = ({ name = "Monday", showModal }) => {
       <Table>
         <thead>
           <tr>
-            <th width={30}>#</th>
-            <th>Group</th>
+            <th width={5}>#</th>
+            <th width={5}>Group</th>
             <th>Subject</th>
             <th width={0}>Task</th>
           </tr>

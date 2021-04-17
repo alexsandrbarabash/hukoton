@@ -1,13 +1,13 @@
 import React from "react";
-import gradient from "../../assets/imges/Gradient.svg";
-import saly from "../../assets/imges/Saly-13.svg";
+import gradient from "../../assets/images/Gradient.svg";
+import saly from "../../assets/images/Saly-13.svg";
 import "./home-screen.scss";
 
 const HomeScreen = () => {
   return (
     <div className="home">
       <div className="container">
-        <div className="row ">
+        <div className="row pt-5">
           <div className="col-7 text">
             <h1>
               We help <span>organize</span> your edication process.

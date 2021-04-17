@@ -10,9 +10,8 @@ const TableElement = ({
   showModal,
 }) => (
   <tr onClick={showModal}>
-    <td width={30}>{index}</td>
-    <td>{time}</td>
-    <td>{subject}</td>
+    <td width={50}>{index}</td>
+    <td width={125}>{subject}</td>
     <td>{task}</td>
     <td>{assessments}</td>
   </tr>
@@ -26,7 +25,6 @@ const DayStudent = ({ name = "Monday", showModal }) => {
         <thead>
           <tr>
             <th width={30}>#</th>
-            <th width={100}>Time</th>
             <th width={125}>Subject</th>
             <th>Task</th>
             <th width={100}>Grades</th>

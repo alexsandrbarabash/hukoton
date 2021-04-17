@@ -8,18 +8,21 @@ import ScheduleEducator from "../../pages/schedule-educator";
 import LoginScreen from "../../pages/login-screen";
 import RegisterScreen from "../../pages/register-screen";
 import HomeScreen from "../../pages/home-screen";
+import { useSelector } from "react-redux";
 
 const RoutingContainer = () => {
+  const roles = useSelector((state) => state.user.roles);
+
   return (
     <Switch>
       <Route exact path="/create" component={SelectionMenu} />
-      <Route exact path="/schedule/creator">
+      <Route exact path={`/schedule/${roles?.creator || 'creator'}`}>
         <ScheduleCreator />
       </Route>
-      <Route exact path="/schedule/student">
+      <Route exact path={`/schedule/${roles?.student || 'student'}`}>
         <ScheduleStudent />
       </Route>
-      <Route exact path="/schedule/educator">
+      <Route exact path={`/schedule/${roles?.educator || 'educator'}`}>
         <ScheduleEducator />
       </Route>
       <Route exact path="/login">
