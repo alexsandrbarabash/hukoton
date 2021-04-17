@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { Modal } from "react-bootstrap";
 
-const ModalStudent = ({ show, handleClose }) => {
+const ModalStudent = ({ handleClose }) => {
+  const [show, setShow] = useState(true);
   return (
-    <Modal show={true} onHide={handleClose} backdrop="static" keyboard={false}>
+    <Modal show={show} onHide={() => setShow(false)} backdrop="static" keyboard={false}>
       <Modal.Header closeButton>
         <Modal.Title>History</Modal.Title>
       </Modal.Header>

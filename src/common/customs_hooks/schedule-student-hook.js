@@ -11,9 +11,7 @@ const useSchedule = () => {
   const [date, setDate] = useState(new Date().getTime());
   // const context = useScheduleService();
 
-  // const id = useSelector((state) => {
-  //   state.userReduser.id;
-  // });
+  const {id} = useSelector(state => state.userReducer);
 
   const getData = async () => {
     try {
@@ -22,7 +20,7 @@ const useSchedule = () => {
 
 
       const data = await context.getWeekScheduleByWeekNo(
-        "607a8344e806c63274f94b21",
+        id,
         date
       );
       setIsGetData(true);

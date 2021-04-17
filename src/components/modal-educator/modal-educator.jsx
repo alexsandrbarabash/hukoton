@@ -19,7 +19,6 @@ const ModalEducator = ({
 }) => {
   const [task, setTask] = useState("");
   const [state, setState] = useState(students);
-  console.log(students);
   const onChangeHandler = (id, value) => {
     const index = state.findIndex((s) => s.id === id);
     setState((state) => {
@@ -30,7 +29,7 @@ const ModalEducator = ({
       ];
     });
   };
-  console.log(state);
+  console.log(state, 'ASDASDASDASDADSASD');
   return (
     <Modal show={show} onHide={handleClose} size="lg">
       <Modal.Header closeButton></Modal.Header>
@@ -41,7 +40,7 @@ const ModalEducator = ({
               <h5>Group</h5>
               <div className="left-col">
                 <div className="student-grade">
-                  {state.map((item) => (
+                  {students.map((item) => (
                     <ItemStudent id={item.id} name={`${item.lastName}`} />
                   ))}
                 </div>
