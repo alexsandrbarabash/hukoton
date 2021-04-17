@@ -21,11 +21,10 @@ const useSchedule = () => {
   const getData = async () => {
     try {
       const context = new ScheduleService();
-      console.log(useScheduleService);
       setRequested(true);
 
       const data = await context.getWeekScheduleByWeekNo(
-        "607a834be806c63274f94b22",
+        "607a8344e806c63274f94b21",
         date.getTime()
       );
       setIsGetData(true)
@@ -34,7 +33,7 @@ const useSchedule = () => {
       setRequested(false);
 
     } catch (e) {
-      console.log(e)
+      console.log("e",e)
       isError(true);
     }
   };

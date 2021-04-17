@@ -36,7 +36,6 @@ const ScheduleStudent = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-4">
-              {console.log('day0', schedule.day0)  }
               <DayStudent data={schedule.day0} />
             </div>
             <div className="col-4">

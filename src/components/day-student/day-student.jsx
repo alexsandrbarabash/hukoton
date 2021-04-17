@@ -20,7 +20,6 @@ const TableElement = ({
 const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 const fixArr = (data) => {
   return arr.map((item, index) => {
-
     const newItem = data.find((item) => index === item.order);
     if (newItem) {
       return newItem;
@@ -35,12 +34,10 @@ const fixArr = (data) => {
   });
 };
 
-
 const DayStudent = ({ name = "Monday", showModal, data }) => {
   const [norm, setNorm] = useState([]);
 
   useEffect(() => {
-    console.log('data2', data)
     setNorm(fixArr(data));
   }, []);
 
@@ -63,7 +60,8 @@ const DayStudent = ({ name = "Monday", showModal, data }) => {
             {norm.map((item, index) => {
               return (
                 <TableElement
-                  index={index+1}
+                  key={index}
+                  index={index + 1}
                   subject={item.subject}
                   task={item.homework}
                   grade={item.grade}
