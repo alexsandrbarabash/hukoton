@@ -11,7 +11,7 @@ import HomeScreen from "../../pages/home-screen";
 import { useSelector } from "react-redux";
 
 const RoutingContainer = () => {
-  const roles = useSelector((state) => state.user.roles);
+  const roles = useSelector((state) => state.userReducer.roles);
 
   return (
     <Switch>
