@@ -28,12 +28,10 @@ const useSchedule = () => {
         date.getTime()
       );
       setIsGetData(true)
-      console.log('data', data)
       setSchedule(data);
       setRequested(false);
 
     } catch (e) {
-      console.log("e",e)
       isError(true);
     }
   };

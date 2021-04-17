@@ -5,11 +5,10 @@ const TableElement = ({
   index,
   subject = "",
   task = "",
-  time = "",
   showModal,
   grade,
 }) => (
-  <tr onClick={showModal}>
+  <tr>
     <td width={50}>{index}</td>
     <td width={125}>{subject}</td>
     <td>{task}</td>

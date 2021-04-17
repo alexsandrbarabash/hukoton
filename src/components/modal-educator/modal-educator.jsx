@@ -10,9 +10,9 @@ const ItemStudent = () => {
   );
 };
 
-const ModalEducator = () => {
+const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) => {
   return (
-    <Modal show={true} onHide={() => {}} size="lg">
+    <Modal show={show} onHide={handleClose} size="lg">
       <Modal.Header closeButton></Modal.Header>
       <div className="modal-educator">
         <div className="container">
@@ -43,5 +43,6 @@ const ModalEducator = () => {
     </Modal>
   );
 };
+;
 
 export default ModalEducator;

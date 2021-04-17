@@ -6,9 +6,16 @@ const TableElement = ({
   task = "sdfsd",
   group = "A1",
   showModal,
+  students,
+  scheduleID,
+  homework,
   index,
 }) => (
-  <tr onClick={showModal}>
+  <tr
+    onClick={() =>
+      scheduleID ? showModal(students, scheduleID, homework) : () => {}
+    }
+  >
     <td width={40}>{index}</td>
     <td width={90}>{group}</td>
     <td>{subject}</td>
@@ -36,7 +43,6 @@ const DayEducator = ({ name = "Monday", showModal, data }) => {
   const [norm, setNorm] = useState([]);
 
   useEffect(() => {
-      console.log('sdfsd')
     setNorm(fixArr(data));
   }, []);
 
@@ -65,6 +71,9 @@ const DayEducator = ({ name = "Monday", showModal, data }) => {
                   task={item.task}
                   group={item.group.name}
                   showModal={showModal}
+                  students={item.group.name}
+                  scheduleID={item.scheduleID}
+                  homework={item.group.homework}
                 />
               );
             })}
