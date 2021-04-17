@@ -48,15 +48,14 @@ const login = (username, password) => async (dispatch, getState) => {
   const userService = new UserService();
 
   try {
-    const response = await userService.login({
+    const data = await userService.login({
       username,
       password
     });
-    dispatch(loginSucceed(response.data.user));
+    dispatch(loginSucceed(data.user));
   }
   catch (e) {
-    console.log(e.response.data);
-    dispatch(loginFailed(JSON.stringify(e.response)));
+    dispatch(loginFailed(JSON.stringify(e.message)));
   }
 }
 
@@ -65,12 +64,13 @@ const signup = (body) => async (dispatch, getState) => {
   const userService = new UserService();
 
   try {
-    const response = await userService.signup(body);
-    dispatch(signupSucceed(response.data.user));
+    const data = await userService.signup(body);
+    console.log((data.user));
+    dispatch(signupSucceed(data.user));
   }
   catch (e) {
-    console.log(e.response.data);
-    dispatch(signupFailed(JSON.stringify(e.response)));
+    console.log(e.message);
+    dispatch(signupFailed(e.message));
   }
 }
 

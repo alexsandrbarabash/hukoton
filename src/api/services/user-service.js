@@ -1,4 +1,4 @@
-import { CommonService } from './common-service';
+import CommonService from './common-service';
 
 export default class UserService extends CommonService {
     constructor() {
@@ -6,6 +6,7 @@ export default class UserService extends CommonService {
     }
 
     async login({username, password}) {
+        console.log(username, password);
         try {
             const res = await this._baseAPI.post('/login', {
                 username,

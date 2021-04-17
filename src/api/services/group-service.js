@@ -1,4 +1,4 @@
-import { CommonService } from './common-service';
+import CommonService from './common-service';
 
 export default class GroupService extends CommonService {
     constructor() {
