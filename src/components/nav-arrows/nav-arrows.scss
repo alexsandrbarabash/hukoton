@@ -1,0 +1,19 @@
+.nav-arrows {
+  text-align: center;
+  height: 40px;
+  width: 135px;
+  //border: 2px solid #C4C4C4;
+  font-size: 30px;
+  padding-bottom: 55px;
+  margin-left: 40px;
+  margin-top: 10px;
+  border-radius: 100px;
+  box-shadow: 0px 8px 20px rgba(14, 30, 109, 0.1);
+  .left {
+    margin-right: 25px;
+  }
+
+  .right {
+    //margin-left: 30px;
+  }
+}

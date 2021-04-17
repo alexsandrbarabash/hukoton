@@ -1,9 +1,18 @@
 import React from "react";
 import DayStudent from "../../components/day-student";
+import NavArrows from "../../components/nav-arrows";
+import { useSelector } from "react-redux";
 
 const ScheduleStudent = () => {
+  const { role, roles } = useSelector((state) => state.user);
+
+  if (role === roles.student) {
+    return window.location = `${process.env.REACT_APP_BACKEND_API}/`;
+  }
+
   return (
     <div className="schedule-wrapper">
+      <NavArrows />
       <div className="container-fluid">
         <div className="row">
           <div className="col-4">

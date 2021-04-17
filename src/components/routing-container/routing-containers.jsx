@@ -1,13 +1,13 @@
 import React from "react";
 import {Switch,Route} from "react-router-dom";
-import MainScreen from '../../pages/main-screen';
+import LoginScreen from '../../pages/login-screen';
 import RegisterScreen from '../../pages/register-screen';
 
 const RoutingContainer = () => {
     return (
         <Switch>
             <Route exact path="/">
-            <MainScreen />
+            <LoginScreen />
             </Route>
             <Route exact path="/register">
             <RegisterScreen />

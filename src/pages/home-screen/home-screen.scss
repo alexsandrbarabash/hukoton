@@ -1,0 +1,56 @@
+//font-family: 'Gilroy-Bold', sans-serif;
+//font-family: 'Gilroy-Heavy', sans-serif;
+//font-family: 'Gilroy-Light', sans-serif;
+//font-family: 'Gilroy-Medium', sans-serif;
+//font-family: 'Gilroy-Regular', sans-serif;
+
+.home {
+  min-height: 100vh;
+  font-family: 'Gilroy-Medium', sans-serif;
+  background-color: #fefae6;
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-family: 'Gilroy-Medium', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 125%;
+
+      span {
+        color: #ffa8c1;
+      }
+    }
+
+    p {
+      font-family: 'Gilroy-Medium', sans-serif;
+      font-style: normal;
+      //font-weight: bold;
+      font-size: 32px;
+      line-height: 135%;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .home-img {
+    position: relative;
+
+    .saly-img {
+      position: absolute;
+      top: 30px;
+      left: 60px;
+      z-index: 10;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
