@@ -6,6 +6,7 @@ import store from './redux/store';
 
 import GroupServiceContext from './api/context/groupServiceContext';
 import UserServiceContext from './api/context/userServiceContext';
+import ScheduleServiceContext from './api/context/scheduleServiceContext';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -14,7 +15,9 @@ ReactDOM.render(
         <Router>
             <GroupServiceContext>
                 <UserServiceContext>
+                  <ScheduleServiceContext>
                     <App/>
+                  </ScheduleServiceContext>
                 </UserServiceContext>
             </GroupServiceContext>
         </Router>

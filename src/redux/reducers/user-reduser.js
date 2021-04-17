@@ -1,4 +1,4 @@
-import { LOGIN } from "../constants/user-constants";
+import { LOGIN } from '../constants/user-constants';
 
 const defaultState = {
   login: false,
