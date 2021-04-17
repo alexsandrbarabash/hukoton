@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export class CommonService {
+export default class CommonService {
     _baseURL = 'http://localhost:8000';
 
     constructor(_dynamicURL) {
