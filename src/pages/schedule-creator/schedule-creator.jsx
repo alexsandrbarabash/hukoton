@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 import NavArrows from "../../components/nav-arrows";
 
 const ScheduleCreator = () => {
-  const { role, roles } = useSelector((state) => state.user);
-
-  if (!role || role !== roles?.creator) {
-    return (window.location = `${process.env.REACT_APP_FRONTEND_API}`);
-  }
+  // const { role, roles } = useSelector((state) => state.user);
+  //
+  // if (!role || role !== roles?.creator) {
+  //   return (window.location = `${process.env.REACT_APP_FRONTEND_API}`);
+  // }
 
   return (
     <div className="schedule-wrapper">
