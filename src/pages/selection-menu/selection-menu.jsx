@@ -79,7 +79,6 @@ const SelectionMenu = () => {
             <InputGroup className='mb-3'>
               <FormControl placeholder='Search...'/>
             </InputGroup>
-            <AddItemButton/>
             {loading ? <Spinner/> : <SelectionMenuItems items={items} mode={mode}/>}
           </Col>
         </Row>
