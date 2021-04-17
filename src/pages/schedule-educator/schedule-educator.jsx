@@ -51,6 +51,7 @@ const ScheduleEducator = () => {
         handleClose={handleClose}
         show={show}
       />
+
       <div className="schedule-wrapper">
         <NavArrows />
         <div className="container-fluid">
