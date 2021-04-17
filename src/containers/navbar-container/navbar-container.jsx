@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
 const NavbarContainer = () => {
-    const role = useSelector((state) => state.user.role);
+    const role = useSelector((state) => state.userReducer.role);
     
     return (
       <NavbarItem>

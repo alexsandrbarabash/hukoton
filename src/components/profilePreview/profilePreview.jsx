@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const ProfilePreview = () => {
   // const dividedName = name.split(' ');
-  const { firstName, lastName, login } = useSelector((state) => state.user);
+  const { firstName, lastName, login } = useSelector((state) => state.userReducer);
 
   if (!login) {
     return null;
