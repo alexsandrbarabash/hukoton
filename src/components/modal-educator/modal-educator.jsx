@@ -63,14 +63,16 @@ const ModalEducator = ({
   //   })
   // };
 
+
+const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) => {
   return (
-    <Modal show={true} onHide={() => {
-    }} size='lg'>
-      <Modal.Header closeButton/>
-      <div className='modal-educator'>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-7'>
+    <Modal show={show} onHide={handleClose} size="lg">
+      <Modal.Header closeButton></Modal.Header>
+      <div className="modal-educator">
+        <div className="container">
+          <div className="row">
+            <div className="col-7">
+
               <h5>Group</h5>
               <div className='left-col'>
                 <div className='student-grade'>
@@ -98,5 +100,6 @@ const ModalEducator = ({
     </Modal>
   );
 };
+;
 
 export default ModalEducator;

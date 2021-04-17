@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 
 const TableElement = ({
@@ -6,9 +6,16 @@ const TableElement = ({
   task = "sdfsd",
   group = "A1",
   showModal,
+  students,
+  scheduleID,
+  homework,
   index,
 }) => (
-  <tr onClick={showModal}>
+  <tr
+    onClick={() =>
+      scheduleID ? showModal(students, scheduleID, homework) : () => {}
+    }
+  >
     <td width={40}>{index}</td>
     <td width={90}>{group}</td>
     <td>{subject}</td>
@@ -16,7 +23,29 @@ const TableElement = ({
   </tr>
 );
 
-const DayEducator = ({ name = "Monday", showModal }) => {
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+const fixArr = (data) => {
+  return arr.map((item, index) => {
+    const newItem = data.find((item) => index === item.order);
+    if (newItem) {
+      return newItem;
+    }
+
+    return {
+      subject: "",
+      task: "",
+      group: "",
+    };
+  });
+};
+
+const DayEducator = ({ name = "Monday", showModal, data }) => {
+  const [norm, setNorm] = useState([]);
+
+  useEffect(() => {
+    setNorm(fixArr(data));
+  }, []);
+
   return (
     <div className="tab-container">
       <h3>{name}</h3>
@@ -33,14 +62,21 @@ const DayEducator = ({ name = "Monday", showModal }) => {
       <div className="table-day">
         <Table striped hover size="sm">
           <tbody>
-            <TableElement index={1} subject="react" showModal={showModal} />
-            <TableElement index={2} subject="" />
-            <TableElement index={3} subject="" />
-            <TableElement index={4} subject="react" showModal={showModal} />
-            <TableElement index={5} subject="react" showModal={showModal} />
-            <TableElement index={6} subject="react" showModal={showModal} />
-            <TableElement index={7} subject="react" showModal={showModal} />
-            <TableElement index={8} subject="react" showModal={showModal} />
+            {norm.map((item, index) => {
+              return (
+                <TableElement
+                  key={index}
+                  index={index + 1}
+                  subject={item.subject}
+                  task={item.task}
+                  group={item.group.name}
+                  showModal={showModal}
+                  students={item.group.name}
+                  scheduleID={item.scheduleID}
+                  homework={item.group.homework}
+                />
+              );
+            })}
           </tbody>
         </Table>
       </div>

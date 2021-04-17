@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
 import { useScheduleService } from "../../api/context/scheduleServiceContext";
 import { useSelector } from "react-redux";
+import ScheduleService from "../../api/services/schedule-service";
 
-const useStudent = () => {
-  const [schedule, setSchedule] = useState([]);
+const useSchedule = () => {
+  const [schedule, setSchedule] = useState({});
   const [isGetData, setIsGetData] = useState(false);
   const [error, isError] = useState(false);
   const [requested, setRequested] = useState(false);
-  const [date, setDate] = useState(new Date().getTime());
-  const context = useScheduleService();
-  const id = useSelector((state) => {
-    state.userReduser.id;
-  });
+  const [date, setDate] = useState(new Date());
+  // const context = useScheduleService();
+
+  // const id = useSelector((state) => {
+  //   state.userReduser.id;
+  // });
+
+
+
 
   const getData = async () => {
     try {
+      const context = new ScheduleService();
       setRequested(true);
 
-      const data = await context.getWeekScheduleByWeekNo(id, date.getTime());
-
+      const data = await context.getWeekScheduleByWeekNo(
+        "607a8344e806c63274f94b21",
+        date.getTime()
+      );
+      setIsGetData(true)
+      setSchedule(data);
       setRequested(false);
+
     } catch (e) {
       isError(true);
     }
@@ -27,11 +38,19 @@ const useStudent = () => {
 
   useEffect(() => {
     getData();
-  }, [setDate]);
+  }, [date]);
 
-  const next = () => {};
+  const next = () => {
+    setIsGetData(false)
+    setDate(date.setDate(date.getDate() + 7));
+  };
 
-  const back = () => {};
+  const back = () => {
+    setIsGetData(false)
+    setDate(date.setDate(date.getDate() - 7));
+  };
 
-  return schedule;
+  return { schedule, next, back, requested, error, isGetData };
 };
+
+export default useSchedule;
