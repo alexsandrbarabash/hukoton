@@ -13,7 +13,7 @@ const ScheduleStudent = () => {
 
   return (
     <>
-      {/*<ModalStudent />*/}
+      <ModalStudent />
       <div className="schedule-wrapper">
         <NavArrows />
         <div className="container-fluid">
