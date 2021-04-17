@@ -3,6 +3,8 @@ import FormInput from "../custom-from-input/custom-form-input.jsx";
 import saly from "../../assets/images/Saly-13.svg";
 import "./register-form-style.scss";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
+import Spinner from "../spinner";
 
 const RegisterForm = ({onSubmitHandler}) => {
   const [firstName, setFirstName] = useState("");
@@ -12,6 +14,12 @@ const RegisterForm = ({onSubmitHandler}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const {signingUp} = useSelector(state => state.userReducer);
+
+  if (signingUp) {
+    return (<Spinner/>);
+  }
 
   return (
     <div className="row d-flex register-form justify-content-center">
