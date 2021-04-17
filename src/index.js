@@ -4,14 +4,20 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
+import GroupServiceContext from './api/context/groupServiceContext';
+import UserServiceContext from './api/context/userServiceContext';
+
 import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
-            <App/>
+            <GroupServiceContext>
+                <UserServiceContext>
+                    <App/>
+                </UserServiceContext>
+            </GroupServiceContext>
         </Router>
     </Provider>,
     document.getElementById('root'),
-
 );
