@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import DayEducator from "../../components/day-educator";
 import { useSelector } from "react-redux";
 import NavArrows from "../../components/nav-arrows";
@@ -6,8 +6,8 @@ import NavArrows from "../../components/nav-arrows";
 const ScheduleEducator = () => {
   const { role, roles } = useSelector((state) => state.user);
 
-  if(role === roles.educator) {
-    return window.location = `${process.env.REACT_APP_BACKEND_API}/`;
+  if (!role || role !== roles?.educator) {
+    return (window.location = `${process.env.REACT_APP_FRONTEND_API}`);
   }
 
   return (

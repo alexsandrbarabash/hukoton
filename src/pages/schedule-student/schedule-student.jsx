@@ -6,8 +6,8 @@ import { useSelector } from "react-redux";
 const ScheduleStudent = () => {
   const { role, roles } = useSelector((state) => state.user);
 
-  if (role === roles.student) {
-    return window.location = `${process.env.REACT_APP_BACKEND_API}/`;
+  if (!role || role !== roles?.student) {
+    return window.location = `${process.env.REACT_APP_FRONTEND_API}`;
   }
 
   return (
