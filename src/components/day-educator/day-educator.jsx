@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 
 const TableElement = ({
-  subject = "sfd",
-  task = "sdfsd",
-  group = "A1",
+  subject = "",
+  task = "",
+  group = "",
   showModal,
   students,
   scheduleID,

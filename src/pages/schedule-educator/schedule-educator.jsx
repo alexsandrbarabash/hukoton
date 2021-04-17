@@ -52,7 +52,7 @@ const ScheduleEducator = () => {
         show={show}
       />
       <div className="schedule-wrapper">
-        <NavArrows />
+        <NavArrows onBack={back} onNext={next} />
         <div className="container-fluid">
           <div className="row">
             <div className="col-4">
