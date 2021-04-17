@@ -1,6 +1,6 @@
 import { CommonService } from './common-service';
 
-export class UserService extends CommonService {
+export default class UserService extends CommonService {
     constructor() {
         super('/api/users');
     }
