@@ -3,9 +3,9 @@ import RegisterForm from "../../components/register-form";
 import {useDispatch, useSelector} from "react-redux";
 import {signup} from "../../redux/actions";
 import Spinner from "../../components/spinner";
-
+import "./register-style.scss"
 const RegisterScreen = () => {
-  const dispatch = useDispatch();
+const dispatch = useDispatch();
 
   const onSubmitHandler = (e, form) => {
     e.preventDefault();

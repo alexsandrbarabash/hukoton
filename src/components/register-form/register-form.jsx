@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import FormInput from "../custom-from-input/custom-form-input.jsx";
+
+import style from "./register-form-style.scss";
 import saly from "../../assets/images/Saly-13.svg";
 import "./register-form-style.scss";
 import {Link} from "react-router-dom";
@@ -24,7 +26,7 @@ const RegisterForm = ({onSubmitHandler}) => {
   return (
     <div className="row d-flex register-form justify-content-center">
       <div className="col-5 mt-5 img-wrapper">
-        <img src={saly} alt=""/>
+        <img src={saly} alt="" style={{marginTop:40}} />
       </div>
       <aside className="col-5 mt-5 card-wrapper">
         <div className="card">

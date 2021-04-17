@@ -1,4 +1,4 @@
-import CommonService from './common-service';
+ import CommonService from './common-service';
 
 export default class ScheduleService extends CommonService {
   constructor() {
