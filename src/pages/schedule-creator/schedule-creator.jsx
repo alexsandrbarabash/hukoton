@@ -3,7 +3,7 @@ import "./schedule-creator.scss";
 import DayCreator from "../../components/day-creator";
 import { useSelector } from "react-redux";
 import NavArrows from "../../components/nav-arrows";
-import ModalCreatora from "../../components/modal-creator/modal-creator";
+import ModalCreator from "../../components/modal-creator/modal-creator";
 
 const ScheduleCreator = () => {
   // const { role, roles } = useSelector((state) => state.user);
@@ -14,7 +14,7 @@ const ScheduleCreator = () => {
 
   return (
     <>
-      <ModalCreatora />
+      {/*<ModalCreator />*/}
       <div className="schedule-wrapper">
         <NavArrows />
         <div className="container-fluid">

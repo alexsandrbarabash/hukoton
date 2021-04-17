@@ -11,8 +11,8 @@ const FormInput = ({
     <div className="form-group">
       <div className="input-group">
         <input
-          // onChange={(e) => onChange(e.target.value)}
-          // value={value}
+          onChange={(e) => onChange(e.target.value)}
+          value={value}
           name={name}
           className="form-control"
           placeholder={placeholder}

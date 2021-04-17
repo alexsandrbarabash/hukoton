@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import FormInput from "../custom-from-input/custom-form-input.jsx";
 import { Link } from "react-router-dom";
+import {useSelector} from "react-redux";
 
-const LoginForm = () => {
+const LoginForm = ({onSubmitHandler}) => {
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
+  const {error} = useSelector(state => state.userReducer);
+
   return (
     <div className="row  d-flex justify-content-center">
       <aside className="col-5 mt-5">
@@ -12,8 +15,8 @@ const LoginForm = () => {
           <article className="card-body">
             <h4 className="card-title text-center mb-4 mt-1">Sign in</h4>
             <hr />
-            <p className="text-success text-center">Welcome</p>
-            <form>
+            <p className="text-success text-center">{error ? error : 'Welcome'}</p>
+            <form onSubmit={(e) => onSubmitHandler(e, login, password)}>
               <FormInput
                 placeholder="Login"
                 value={login}
