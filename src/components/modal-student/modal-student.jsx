@@ -1,26 +1,23 @@
 import React from "react";
-import { Button, Form, Modal } from "react-bootstrap";
-import FormInput from "../custom-from-input";
+import { Modal } from "react-bootstrap";
 
-const ModalStudent = () => {
+const ModalStudent = ({ show, handleClose }) => {
   return (
-    <Modal show={true} onHide={() => {}} size="sm">
-      <Modal.Header closeButton></Modal.Header>
-      <div className="modal-creator">
-        <h6>Educator</h6>
-        <Form>
-          <Form.Control as="select">
-            <EducatorItem educator="Якуха" />
-            <EducatorItem educator="Якуха2" />
-            <EducatorItem educator="Якуха3" />
-          </Form.Control>
-          <h6>Subject</h6>
-          <FormInput />
-          <Button variant="primary" type="submit">
-            Save
-          </Button>
-        </Form>
-      </div>
+    <Modal show={true} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>History</Modal.Title>
+      </Modal.Header>
+
+      <Modal.Body>
+        <div>Educator: Jon Sheperd</div>
+        <div>
+          Task: Find interesting fact about French Revolution. Also read this
+          book:
+          https://brill.com/flyer/db/bho?print=pdf&pdfGenerator=headless_chrome
+        </div>
+        <div>Time: 8:00-8:45</div>
+        <div>Grades: You don't have assessments</div>
+      </Modal.Body>
     </Modal>
   );
 };

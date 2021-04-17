@@ -2,7 +2,7 @@ import React from "react";
 import DayStudent from "../../components/day-student";
 import NavArrows from "../../components/nav-arrows";
 import { useSelector } from "react-redux";
-import ModalEducator from "../../components/modal-educator";
+import ModalStudent from "../../components/modal-student";
 
 const ScheduleStudent = () => {
   // const { role, roles } = useSelector((state) => state.user);
@@ -13,7 +13,7 @@ const ScheduleStudent = () => {
 
   return (
     <>
-
+      <ModalStudent />
       <div className="schedule-wrapper">
         <NavArrows />
         <div className="container-fluid">
