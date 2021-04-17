@@ -25,7 +25,6 @@ const useSchedule = () => {
         "607a8344e806c63274f94b21",
         date
       );
-      console.log(data);
       setIsGetData(true);
       setSchedule(data);
       setRequested(false);

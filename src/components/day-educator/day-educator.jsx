@@ -71,7 +71,7 @@ const DayEducator = ({ name = "Monday", showModal, data }) => {
                   task={item.task}
                   group={item.group.name}
                   showModal={showModal}
-                  students={item.group.name}
+                  students={item.group.students}
                   scheduleID={item.scheduleID}
                   homework={item.group.homework}
                 />

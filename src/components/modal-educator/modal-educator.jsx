@@ -1,16 +1,36 @@
-import React from "react";
-import { Button, Col, Container, Modal, Row } from "react-bootstrap";
+import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
 import "./modal-educator.scss";
 
-const ItemStudent = () => {
+const ItemStudent = ({ name, value }) => {
   return (
     <div className="item-student">
-      <span>name</span> <input type="text" />
+      <span>{name}</span> <input type="text" value={value} />
     </div>
   );
 };
 
-const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) => {
+const ModalEducator = ({
+  handleClose,
+  homework,
+  scheduleID,
+  students,
+  show,
+}) => {
+  const [task, setTask] = useState("");
+  const [state, setState] = useState(students);
+  console.log(students);
+  const onChangeHandler = (id, value) => {
+    const index = state.findIndex((s) => s.id === id);
+    setState((state) => {
+      return [
+        ...state.slice(0, index),
+        { ...state[index], grade: state[index].grade },
+        ...state.slice(index + 1),
+      ];
+    });
+  };
+  console.log(state);
   return (
     <Modal show={show} onHide={handleClose} size="lg">
       <Modal.Header closeButton></Modal.Header>
@@ -21,13 +41,17 @@ const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) =>
               <h5>Group</h5>
               <div className="left-col">
                 <div className="student-grade">
-                  <ItemStudent />
+                  {state.map((item) => (
+                    <ItemStudent id={item.id} name={`${item.lastName}`} />
+                  ))}
                 </div>
               </div>
             </div>
             <div className="col-5 textarea-wrapper">
               <h5>Homework</h5>
-              <textarea></textarea>
+              <textarea onChange={(e) => setTask(e.target.value)}>
+                {homework}
+              </textarea>
             </div>
           </div>
           <div className="row modal-educator-footer">
@@ -43,6 +67,4 @@ const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) =>
     </Modal>
   );
 };
-;
-
 export default ModalEducator;
