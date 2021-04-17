@@ -1,3 +1,3 @@
 import ModalStudent from "./modal-student";
 
-export default ModalStudent; 
+export default ModalStudent;
