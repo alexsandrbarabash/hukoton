@@ -6,6 +6,8 @@ import NavArrows from "../../components/nav-arrows";
 import ModalCreator from "../../components/modal-creator/modal-creator";
 
 const ScheduleCreator = () => {
+
+
   // const { role, roles } = useSelector((state) => state.user);
   //
   // if (!role || role !== roles?.creator) {

@@ -3,6 +3,7 @@ import DayStudent from "../../components/day-student";
 import NavArrows from "../../components/nav-arrows";
 import { useSelector } from "react-redux";
 import ModalStudent from "../../components/modal-student";
+import useSchedule from "../../common/customs_hooks/schedule-student-hook";
 
 const ScheduleStudent = () => {
   // const { role, roles } = useSelector((state) => state.user);
@@ -11,6 +12,8 @@ const ScheduleStudent = () => {
   //   return window.location = `${process.env.REACT_APP_FRONTEND_API}`;
   // }
 
+  const { schedule } = useSchedule();
+  console.log(schedule);
   return (
     <>
       {/*<ModalStudent />*/}
