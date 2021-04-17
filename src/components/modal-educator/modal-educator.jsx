@@ -1,70 +1,36 @@
-import React, { useState } from 'react';
-import { Modal } from 'react-bootstrap';
-import './modal-educator.scss';
+import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
+import "./modal-educator.scss";
 
-// import ScheduleService from '../../api/services/schedule-service';
-
-// const scheduleService = new ScheduleService();
+const ItemStudent = ({ name, value }) => {
+  return (
+    <div className="item-student">
+      <span>{name}</span> <input type="text" value={value} />
+    </div>
+  );
+};
 
 const ModalEducator = ({
-                         students = [],
-                         scheduleCellId,
-                         educatorID,
-                         onSubmitHandler,
-                         homework,
-                       }) => {
-  const [grades, setGrades] = useState([]);
-
-  const inputHandler = (e, id) => {
-    setGrades(prevState => {
-      const idx = prevState.findIndex(item => item.id === id);
-
-      if (typeof idx !== 'number') {
-        const newStudent = {
-          studentID: id,
-          grade: +e.target.value,
-          scheduleCellId,
-          educatorID,
-        };
-
-        return {...prevState, newStudent};
-      }
-
+  handleClose,
+  homework,
+  scheduleID,
+  students,
+  show,
+}) => {
+  const [task, setTask] = useState("");
+  const [state, setState] = useState(students);
+  console.log(students);
+  const onChangeHandler = (id, value) => {
+    const index = state.findIndex((s) => s.id === id);
+    setState((state) => {
       return [
-        ...prevState.slice(0, idx),
-        ...prevState.slice(idx + 1, 0),
-        {
-          studentID: id,
-          grade: +e.target.value,
-          scheduleCellId,
-          educatorID,
-        },
+        ...state.slice(0, index),
+        { ...state[index], grade: state[index].grade },
+        ...state.slice(index + 1),
       ];
     });
   };
-
-  const StudentItems = students.map(({firstName, lastName, id}) => {
-    return (
-      <div key={id} className='item-student'>
-        <span>{firstName} {lastName}</span> <input
-        onInput={e => inputHandler(e, id)} type='number'/>
-      </div>
-    );
-
-  });
-
-  // const onSubmitHandler = () => {
-  //   Promise.all(
-  //     grades.map(item => {
-  //       scheduleService.createNewGrade(item);
-  //     })
-  //   ).then(res => {
-  //
-  //   })
-  // };
-
-
-const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) => {
+  console.log(state);
   return (
     <Modal show={show} onHide={handleClose} size="lg">
       <Modal.Header closeButton></Modal.Header>
@@ -72,26 +38,27 @@ const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) =>
         <div className="container">
           <div className="row">
             <div className="col-7">
-
               <h5>Group</h5>
-              <div className='left-col'>
-                <div className='student-grade'>
-                  {StudentItems}
+              <div className="left-col">
+                <div className="student-grade">
+                  {state.map((item) => (
+                    <ItemStudent id={item.id} name={`${item.lastName}`} />
+                  ))}
                 </div>
               </div>
             </div>
-            <div className='col-5 textarea-wrapper'>
+            <div className="col-5 textarea-wrapper">
               <h5>Homework</h5>
-              <textarea/>
+              <textarea onChange={(e) => setTask(e.target.value)}>
+                {homework}
+              </textarea>
             </div>
           </div>
-          <div className='row modal-educator-footer'>
-            <div className='col-7 mt-3 mb-3'>
-              <div className='row'>
-                <button className='col-5 btn btn-primary'
-                  onSubmit={() => onSubmitHandler(grades)}>Save
-                </button>
-                <button className='col-5 btn btn-danger'>Cancel</button>
+          <div className="row modal-educator-footer">
+            <div className="col-7 mt-3 mb-3">
+              <div className="row">
+                <button className="col-5 btn btn-primary ">Save</button>
+                <button className="col-5 btn-outline-primary">Cancel</button>
               </div>
             </div>
           </div>
@@ -100,6 +67,4 @@ const ModalEducator = ({ handleClose, homework, scheduleID, students, show }) =>
     </Modal>
   );
 };
-;
-
 export default ModalEducator;

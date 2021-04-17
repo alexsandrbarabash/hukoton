@@ -22,9 +22,9 @@ const ScheduleEducator = () => {
   const handleClose = () => setShow(false);
 
   const handleShow = (studentsMy, scheduleIDMy, homeworkMy) => {
-    setStudents(students);
-    setScheduleID(scheduleID);
-    setHomework(homework);
+    setStudents(studentsMy);
+    setScheduleID(scheduleIDMy);
+    setHomework(homeworkMy);
     setShow(true);
   };
 
@@ -53,28 +53,28 @@ const ScheduleEducator = () => {
       />
 
       <div className="schedule-wrapper">
-        <NavArrows />
+        <NavArrows onBack={back} onNext={next} />
         <div className="container-fluid">
           <div className="row">
             <div className="col-4">
               <DayEducator data={schedule.day0} showModal={handleShow} />
             </div>
             <div className="col-4">
-              <DayEducator data={schedule.day1} />
+              <DayEducator data={schedule.day1} showModal={handleShow} />
             </div>
             <div className="col-4">
-              <DayEducator data={schedule.day2} />
+              <DayEducator data={schedule.day2} showModal={handleShow} />
             </div>
           </div>
           <div className="row">
             <div className="col-4">
-              <DayEducator data={schedule.day3} />
+              <DayEducator data={schedule.day3} showModal={handleShow} />
             </div>
             <div className="col-4">
-              <DayEducator data={schedule.day4} />
+              <DayEducator data={schedule.day4} showModal={handleShow} />
             </div>
             <div className="col-4">
-              <DayEducator data={schedule.day5} />
+              <DayEducator data={schedule.day5} showModal={handleShow} />
             </div>
           </div>
         </div>
