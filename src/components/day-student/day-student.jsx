@@ -1,23 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 
 const TableElement = ({
   index,
   subject = "",
   task = "",
-  assessments = "",
   time = "",
   showModal,
+  grade,
 }) => (
   <tr onClick={showModal}>
     <td width={50}>{index}</td>
     <td width={125}>{subject}</td>
     <td>{task}</td>
-    <td>{assessments}</td>
+    <td width={130}>{grade}</td>
   </tr>
 );
 
-const DayStudent = ({ name = "Monday", showModal }) => {
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+const fixArr = (data) => {
+  return arr.map((item, index) => {
+
+    const newItem = data.find((item) => index === item.order);
+    if (newItem) {
+      return newItem;
+    }
+
+    return {
+      index,
+      subject: "",
+      homework: "",
+      grade: "",
+    };
+  });
+};
+
+
+const DayStudent = ({ name = "Monday", showModal, data }) => {
+  const [norm, setNorm] = useState([]);
+
+  useEffect(() => {
+    console.log('data2', data)
+    setNorm(fixArr(data));
+  }, []);
+
   return (
     <div className="tab-container">
       <h3>{name}</h3>
@@ -27,21 +53,23 @@ const DayStudent = ({ name = "Monday", showModal }) => {
             <th width={30}>#</th>
             <th width={125}>Subject</th>
             <th>Task</th>
-            <th width={100}>Grades</th>
+            <th width={150}>Grades</th>
           </tr>
         </thead>
       </Table>
       <div className="table-day">
         <Table striped hover size="sm">
           <tbody>
-            <TableElement index={1} subject="react" showModal={showModal} />
-            <TableElement index={2} subject="" />
-            <TableElement index={3} subject="" />
-            <TableElement index={4} subject="react" showModal={showModal} />
-            <TableElement index={5} subject="react" showModal={showModal} />
-            <TableElement index={6} subject="react" showModal={showModal} />
-            <TableElement index={7} subject="react" showModal={showModal} />
-            <TableElement index={8} subject="react" showModal={showModal} />
+            {norm.map((item, index) => {
+              return (
+                <TableElement
+                  index={index+1}
+                  subject={item.subject}
+                  task={item.homework}
+                  grade={item.grade}
+                />
+              );
+            })}
           </tbody>
         </Table>
       </div>
